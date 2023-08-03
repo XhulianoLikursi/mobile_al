@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MobileAL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{{ url_for('static', filename='./css/style.css') }}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <ul class="navbar">
+    <li class="navbar-item">
+      <a href="/">
+        <div class="navbar-content">
+          <img src="../static/img/mobleal.jpg" alt="Home" width="180" height="50">
+          <span class="navbar-text">Albania's biggest <br> car marketplace</span>
+        </div>
+      </a>
+    </li>
+    <li class="navbar-item">
+      <a href="/loginPage"><button class="blue-button">Login</button></a>
+    </li>
+  </ul>
+  <div class="ads-contanier">
+      <a href="/"><img src="../static/img/car.jpg" alt="Home" width="100%" height="500px" style="height:600px;"></a>
+      <div class="centered">
+        <p>Vetëm makina me garanci.</p>
+        <p>Vetëm nga profesionistë.</p>
+      </div>
+  </div>
+  <br>
+
+  <main>
+   
+    <div class="container">
+      <div class="info">
+        <h3 style="font-size: 20px;  margin: 0;">Disa nga markat e njohura në tregun tonë të automjeteve</h3>
+        <div class="logo">
+          
+          <a href="https://www.mercedes-benz.com/en/"><img src="../static/img/mercedesLogo.png" alt="mercedes-benz" width="200" height="120"></a>
+          <a href="https://www.audi.com/en.html"><img src="../static/img/audiLogo.png" alt="audi" width="200" height="120"></a>
+          <a href="https://www.bmw.com/en/index.html"><img src="../static/img/bmwLogo.jpeg" alt="bmw" width="200" height="120"></a>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <a href="https://www.vw.com/en.html"><img src="../static/img/vwLogo.jpg" alt="vw" width="200" height="120"></a>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-social">
+        <ul>
+          <li><a href="https://www.instagram.com/mobile_de/"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="https://www.facebook.com/mobile.de/"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <ul>
+          <li><a href="https://newsroom.mobile.de/">Company</a></li>
+          <li><a href="https://www.mobile.de/service/imprint">Legal</a></li>
+          <li><a href="https://login.mobile.de/a2/login?lang=en&caller=https%3A%2F%2Fhandel.mobile.de%2Fstartseite%2F%3Flang%3Den">Dealer</a></li>
+          <li><a href="https://apps.apple.com/app/apple-store/id378563358?pt=375847&ct=www.mobile.de-download_button-footer_link&mt=8">Popular</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  
+  </body>
+</html>
+

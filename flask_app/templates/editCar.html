@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="{{ url_for('static', filename='./css/style.css') }}" rel="stylesheet" type="text/css" />
+
+</head>
+<body class="backimage" style="height: 1000px;">
+    <ul class="navbar">
+        <li class="navbar-item ">
+          <a href="/"><img src="{{ url_for('static', filename='img/mobleal.jpg') }}" alt="Home" width="180" height="50"></a>
+        </li>
+        <li class="navbar-item d-flex">
+          <a href="/logout"><button>Logout</button></a>
+          <a href="/profile"><button>My Car Park</button></a>
+        </li>
+      </ul>
+<!-- line 25 is the ads is not uset for the moment -->
+      <!-- <div>
+        <a href="https://www.tesla.com/">
+            <style>
+                .divi{
+                    position: absolute;
+                    right: 0;
+                    top: 50;
+                    height: 100%;
+                }
+                #boxThis {
+                  margin-right: 20px;
+                  margin-top: 10px;
+                  
+                }
+                #boxThis.box {
+                  position: fixed;
+                  top: 0;
+                  right: 0;
+                  z-index: 9999;
+                  -webkit-border-radius: 0 0 10px 10px;
+                  border-radius: 0 0 10px 10px;
+                }
+              </style>
+              <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+              <div class="divi">
+                <div id="boxHere">
+                    <div id="boxThis">
+                        <img src="{{ url_for('static', filename='img/teslax.jpeg') }}" alt="ads" width="240" height="597">
+                    </div>
+                </div>
+                </div>
+              <script>
+                function boxtothetop() {
+                  var windowTop = $(window)
+                    .scrollTop();
+                  var top = $('#boxHere')
+                    .offset()
+                    .top;
+                  if(windowTop > top) {
+                    $('#boxThis')
+                      .addClass('box');
+                    $('#boxHere')
+                      .height($('#boxThis')
+                        .outerHeight());
+                  } else {
+                    $('#boxThis')
+                      .removeClass('box');
+                    $('#boxHere')
+                      .height(0);
+                  }
+                }
+                $(function() {
+                  $(window)
+                    .scroll(boxtothetop);
+                  boxtothetop();
+                });
+              </script>
+        </a>
+      </div> -->
+
+    <form class="w-50 m-auto p-5 border rounded  test5 text1  mt-3" action="/update/car/{{car.id}}" method="post">
+        <h1 class="text-center title">Edit {{car.make}}</h1>
+
+        <div class="form-row">
+            <label  for="make">Make</label>
+            <input type="text" name="make" value="{{car.make}}" class="form-control">
+        </div>
+        {% with messages = get_flashed_messages(category_filter=["make"]) %}
+        {% if messages %}
+        {% for message in messages %}
+        <p class="text-danger text-center">{{message}}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <div class="form-row">
+            <label  for="model">Model</label>
+            <input type="text" name="model" value="{{car.model}}" class="form-control">
+        </div>
+        {% with messages = get_flashed_messages(category_filter=["model"]) %}
+        {% if messages %}
+        {% for message in messages %}
+        <p class="text-danger text-center">{{message}}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <div class="form-row">
+            <label  for="price">Price</label>
+            <input type="number" min="0" value="{{car.price}}" class="form-control" name="price">
+        </div>
+        {% with messages = get_flashed_messages(category_filter=["price"]) %}
+        {% if messages %}
+        {% for message in messages %}
+        <p class="text-danger text-center">{{message}}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <div class="form-row">
+            <label  for="year">Year</label>
+            <input type="date" name="year" value="{{car.year}}" class="form-control">
+        </div>
+        {% with messages = get_flashed_messages(category_filter=["year"]) %}
+        {% if messages %}
+        {% for message in messages %}
+        <p class="text-danger text-center">{{message}}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <div class="form-row">
+            <label  for="kilometer">Kilometer</label>
+            <input type="number" min="0" value="{{car.kilometer}}" class="form-control" name="kilometer">
+        </div>
+        {% with messages = get_flashed_messages(category_filter=["kilometer"]) %}
+        {% if messages %}
+        {% for message in messages %}
+        <p class="text-danger text-center">{{message}}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <div class="form-row">
+            <label  for="fuel">Fuel</label>
+            <input type="text" name="fuel" value="{{car.fuel}}" class="form-control">
+        </div>
+        {% with messages = get_flashed_messages(category_filter=["fuel"]) %}
+        {% if messages %}
+        {% for message in messages %}
+        <p class="text-danger text-center">{{message}}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <div class="form-row">
+            <label  for="transmission">Transmission</label>
+            <input type="text" name="transmission" value="{{car.transmission}}" class="form-control">
+        </div>
+        {% with messages = get_flashed_messages(category_filter=["transmission"]) %}
+        {% if messages %}
+        {% for message in messages %}
+        <p class="text-danger text-center">{{message}}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <div class="form-row">
+            <label  for="description">Description</label>
+            <textarea name="description" class="form-control" cols="30" rows="5">{{car.description}}</textarea>
+        </div>
+        {% with messages = get_flashed_messages(category_filter=["description"]) %}
+        {% if messages %}
+        {% for message in messages %}
+        <p class="text-danger text-center">{{message}}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <br>
+        <button type="submit" class="btn btmlogin">Update</button>
+</body>
+</html>
